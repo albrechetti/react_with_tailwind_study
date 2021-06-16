@@ -16,13 +16,10 @@ class CounterSection extends Component{
             counter: this.state.counter + 1,
         });
     }
-
     componentWillUnmount() {
         clearInterval(this.counterID);
     }
     
-
-
     render() {
         return (
 
