@@ -13,11 +13,8 @@ class RecipeGalery extends Component {
     loadRecipes = async () => {
 
         const recipeResponse = fetch(urlPath + '/recipes');
-        
         const [recipes] = await Promise.all([recipeResponse]);
-
         const recipesJson = await recipes.json();
-
         this.setState({ recipes: recipesJson });
            
     }
