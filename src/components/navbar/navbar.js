@@ -11,53 +11,57 @@ class Navbar extends Component{
 
     handleScroll = () => {
         if (window.scrollY > 0) {
-            document.querySelector('.fixed').className = "fixed w-screen bg-indigo-600";
+            document.querySelector('.fixed').className = "transition duration-500 ease-in-out fixed w-screen bg-gray-50 text-green-600  z-50";
+            document.querySelector('#btn').className = " flex flex-shrink-0 text-center font-bold bg-green-600 px-8 rounded-full py-4 text-green-50";
+            
         } else {
-            document.querySelector('.fixed').className = "fixed w-screen";
+            document.querySelector('.fixed').className = "transition duration-500 ease-in-out fixed w-screen text-green-50  z-50";
+            document.querySelector('#btn').className = " flex flex-shrink-0 text-center font-bold bg-green-50 px-8 rounded-full py-4 text-green-600";
+            
         }
     }
     render() {
         const navLinks = [
+         
             {
                 id: 1,
-                title: 'Item menu 01',
+                title: 'Conheça o app',
                 url: '#',
             },
             {
                 id: 2,
-                title: 'Item menu 02',
+                title: 'Principais Receitas',
                 url: '#',
             },
             {
                 id: 3,
-                title: 'Item menu 03',
-                url: '#',
-            },
-            {
-                id: 4,
-                title: 'Item menu 04',
+                title: 'Sobre nós',
                 url: '#',
             }
         ];
         
         const navbarContainer = 'container flex max-w-screen-xl mx-auto p-8  items-center';
-        const logoContainer = 'container w-1/5 place-self-start text-left';
-        const menuContainer = 'container w-4/5 place-self-end invisible md:visible';
-        const menuList = 'flex float-right space-x-12  text-white ';
+        const logoContainer = 'container flex flex-wrap text-left';
+        const menuContainer = 'container invisible md:visible ';
+        const menuList = 'flex-grow  space-x-12 mx-auto  ';
           
     return (
-        <header className="fixed w-screen">
+        <header className="fixed w-screen text-green-50 z-50">
             <section className={navbarContainer}>
             <div className={logoContainer}>
-                <h1 className="text-2xl text-white font-black ">MeuLogo.</h1>
+                <h1 className="text-2xl  font-black ">TiaVegana.</h1>
             </div>
             <nav className={menuContainer}>
                 <ul className={menuList}>
                     {navLinks.map(item => (
                         <li key={navLinks.id} className="inline-flex text-right"><a href={item.url}>{ item.title}</a></li>
                     ))}
-                </ul>
+                        
+                    </ul>
+                   
+                    
                 </nav>
+                <button id="btn" className="flex flex-shrink-0 text-center font-bold  bg-green-50 px-8 rounded-full py-4 text-green-600 " type="button"> Downlaod App </button>
             </section>
            
             

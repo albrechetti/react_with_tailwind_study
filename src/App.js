@@ -4,6 +4,7 @@ import ContentSectionWith2Col from './components/contentSection/contentSectionWi
 import ContentSectionWith3Col from './components/contentSection/contentSectionWith3Col';
 import CounterSection from './components/counterSection/counterSection';
 import Footer from './components/footer/footer';
+import RecipeGalery from './components/recipeGalery/recipeGalery';
 
 function App() {
   return (
@@ -12,8 +13,7 @@ function App() {
       <Hero />
       <ContentSectionWith2Col />
       <ContentSectionWith3Col />
-      <ContentSectionWith3Col />
-      <ContentSectionWith2Col />
+      <RecipeGalery/>
       <Footer/>
     </div>
   );

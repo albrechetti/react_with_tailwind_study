@@ -1,0 +1,1 @@
+export const urlPath = ' http://192.168.0.166:1337';
