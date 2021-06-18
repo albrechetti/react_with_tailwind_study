@@ -1,4 +1,5 @@
-import HeroDraw from "./heroDraw";
+import { HeroDraw } from "./heroDraw";
+
 
 function Hero(props) {
 
