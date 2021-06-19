@@ -12,6 +12,7 @@ export class RecipeGalery extends Component {
         recipes: [],
         allRecipes: [],
         recipePerPage: 6,
+        btnText: 'Ver mais'
     }
     componentDidMount() {
 
@@ -26,19 +27,26 @@ export class RecipeGalery extends Component {
         this.setState({
             recipes: recipesJson.slice(0, recipePerPage),
             allRecipes: recipesJson,
+            btnText:'Ver mais',
         });
            
     }
     loadMoreRecipes = () => {
-       
-      alert('alo')
-
-        
+        const { allRecipes, btnText } = this.state;
+        const showAll = allRecipes;
+        if (btnText == 'Esconder') {
+            this.loadRecipes();
+        } else {
+            this.setState({
+                recipes: showAll,
+                btnText: 'Esconder'
+            })
+        } 
     }
 
     render() {
-        const { recipes } = this.state;
-        const { allRecipes } = this.state;
+        const { recipes, allRecipes, btnText} = this.state;
+     
 
     return (
         <section className=" bg-gray-50 px-8 ">
@@ -69,11 +77,9 @@ export class RecipeGalery extends Component {
                 
             </div>
             <div className="container  max-w-screen-xl  mx-auto text-center py-16 ">
-                <Button text="Ver mais" onClick={this.loadMoreRecipes}/>
+                <Button id="showAll"text={btnText} onClick={this.loadMoreRecipes}/>
             </div>
-           
-            
-          
+
         </section>
     );
    }

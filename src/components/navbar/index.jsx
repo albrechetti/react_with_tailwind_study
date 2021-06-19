@@ -40,7 +40,7 @@ export class Navbar extends Component{
             }
         ];
         
-        const navbarContainer = 'container flex max-w-screen-xl mx-auto p-8  items-center';
+        const navbarContainer = 'container flex max-w-screen-xl mx-auto py-4  items-center';
         const logoContainer = 'container flex flex-wrap text-left';
         const menuContainer = 'container invisible lg:visible ';
         const menuList = 'flex-grow  md:space-x-8 lg:space-x-12 mx-auto  ';
